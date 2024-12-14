@@ -46,12 +46,12 @@ syn match   pugClassChar "\." containedin=htmlTagName nextgroup=pugClass
 syn match   pugBlockExpansionChar ":\s\+" contained nextgroup=pugTag,pugClassChar,pugIdChar
 syn match   pugIdChar "#[[{]\@!" contained nextgroup=pugId
 syn match   pugClass "\%(\w\|-\)\+" contained nextgroup=@pugComponent
-syn match   pugId "\%(\w\|-\)\+" contained nextgroup=@pugComponent
+syn match   pugId "\%([a-zA-ZñÑ0-9_]\|-\)\+" contained nextgroup=@pugComponent
 syn region  pugDocType start="^\s*\(!!!\|doctype\)" end="$"
 " Unless I'm mistaken, syntax/html.vim requires
 " that the = sign be present for these matches.
 " This adds the matches back for pug.
-syn keyword pugHtmlArg contained href title
+syn keyword pugHtmlArg contained href title hx-get hx-post hx-put hx-delete hx-confirm hx-encoding hx-target hx-swap hx-trigger hx-validate hx-vals hx-indicator
 
 syn match   pugPlainChar "\\" contained
 syn region  pugInterpolation matchgroup=pugInterpolationDelimiter start="[#!]{" end="}" contains=@htmlJavascript
@@ -68,7 +68,7 @@ syn region  pugMarkdownFilter matchgroup=pugFilter start=/^\z(\s*\):\%(markdown\
 syn region  pugStylusFilter matchgroup=pugFilter start="^\z(\s*\):stylus\s*$" end="^\%(\z1\s\|\s*$\)\@!" contains=@htmlStylus
 syn region  pugPlainFilter matchgroup=pugFilter start="^\z(\s*\):\%(sass\|less\|cdata\)\s*$" end="^\%(\z1\s\|\s*$\)\@!"
 
-syn match  pugScriptConditional "^\s*\<\%(if\|else\|else if\|elif\|unless\|while\|until\|case\|when\|default\)\>[?!]\@!"
+syn match  pugScriptConditional "^\s*\<\%(if\|else if\|else\|elif\|unless\|while\|until\|case\|when\|default\)\>[?!]\@!"
 syn match  pugScriptStatement "^\s*\<\%(each\|for\|block\|prepend\|append\|mixin\|extends\|include\)\>[?!]\@!"
 syn region  pugScriptLoopRegion start="^\s*\(for \|each\)" end="$" contains=pugScriptLoopKeywords
 syn keyword  pugScriptLoopKeywords contained for each in
