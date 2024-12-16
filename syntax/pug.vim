@@ -96,7 +96,7 @@ hi def link pugScriptConditionalDelimiter PreProc
 hi def link pugScriptConditionalBool  PreProc
 hi def link pugScriptLoopKeywords     PreProc
 hi def link pugScriptLoopRegion       Identifier
-hi def link pugScriptStatement        Statement
+hi def link pugScriptStatement        Identifier
 hi def link pugScriptStatementKeywords PreProc
 hi def link pugHtmlArg                htmlArg
 hi def link pugAttributes             Identifier
