@@ -91,6 +91,7 @@ syn match  pugError "\$" contained
 hi def link pugPlainChar              Special
 hi def link pugScriptConditional      PreProc
 hi def link pugScriptLoopKeywords     PreProc
+hi def link pugScriptLoopRegion       Identifier
 hi def link pugScriptStatement        PreProc
 hi def link pugHtmlArg                htmlArg
 hi def link pugAttributeString        String
