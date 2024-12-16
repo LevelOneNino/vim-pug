@@ -37,7 +37,7 @@ syn keyword pugCommentTodo  contained TODO FIXME XXX TBD
 syn match   pugComment '\(\s\+\|^\)\/\/.*$' contains=pugCommentTodo,@Spell
 syn region  pugCommentBlock start="\z(\s\+\|^\)\/\/.*$" end="^\%(\z1\s\|\s*$\)\@!" contains=pugCommentTodo,@Spell keepend
 syn region  pugHtmlConditionalComment start="<!--\%(.*\)>" end="<!\%(.*\)-->" contains=pugCommentTodo,@Spell
-syn region  pugAngular2 start="(" end=")" contains=htmlEvent
+syn region  pugAngular2 start="(" end="$" contains=htmlEvent 
 syn region  pugJavascriptString start=+"+  skip=+\\\("\|$\)+  end=+"\|$+ contained
 syn region  pugJavascriptString start=+'+  skip=+\\\('\|$\)+  end=+'\|$+ contained
 syn region  pugJavascriptString start=+`+  skip=+\\\(`\|$\)+  end=+`\|$+ contains=javascriptInterpolation contained
@@ -68,8 +68,14 @@ syn region  pugMarkdownFilter matchgroup=pugFilter start=/^\z(\s*\):\%(markdown\
 syn region  pugStylusFilter matchgroup=pugFilter start="^\z(\s*\):stylus\s*$" end="^\%(\z1\s\|\s*$\)\@!" contains=@htmlStylus
 syn region  pugPlainFilter matchgroup=pugFilter start="^\z(\s*\):\%(sass\|less\|cdata\)\s*$" end="^\%(\z1\s\|\s*$\)\@!"
 
-syn match  pugScriptConditional "^\s*\<\%(if\|else if\|else\|elif\|unless\|while\|until\|case\|when\|default\)\>[?!]\@!"
-syn match  pugScriptStatement "^\s*\<\%(each\|for\|block\|prepend\|append\|mixin\|extends\|include\)\>[?!]\@!"
+" syn match  pugScriptConditional "^\s*\<\%(if\|else if\|else\|elif\|unless\|while\|until\|case\|when\|default\)\>[?!]\@!"
+syn region  pugScriptConditional start="^\s*\<\%(if\|else if\|else\|elif\|unless\|while\|until\|case\|when\|default\)\>[?!]\@!" end="$" contains=pugScriptConditionalMatch,pugScriptConditionalBool, pugScriptConditionalDelimiter
+syn match  pugScriptConditionalMatch "^\s*\<\%(if\|else if\|else\|elif\|unless\|while\|until\|case\|when\|default\)\>[?!]\@!" contained
+syn match pugScriptConditionalBool contained "||\|&&\|===\|==\|<\|>\|=<\|>="
+syn match pugScriptConditionalDelimiter contained "(\|)"
+
+syn region  pugScriptStatement start="^\s*\<\%(each\|for\|block\|prepend\|append\|mixin\|extends\|include\)\>[?!]\@!"  end="$" contains=pugScriptStatementKeywords
+syn keyword  pugScriptStatementKeywords contained each for block prepend append mixin extends include
 syn region  pugScriptLoopRegion start="^\s*\(for \|each\)" end="$" contains=pugScriptLoopKeywords
 syn keyword  pugScriptLoopKeywords contained for each in
 
@@ -90,11 +96,11 @@ hi def link pugHtmlArg                htmlArg
 hi def link pugAttributeString        String
 hi def link pugAttributesDelimiter    Identifier
 hi def link pugIdChar                 Special
+hi def link pugId                     Special
 hi def link pugClassChar              Special
 hi def link pugBlockExpansionChar     Special
 hi def link pugPipeChar               Special
 hi def link pugTagBlockChar           Special
-hi def link pugId                     Identifier
 hi def link pugClass                  Type
 hi def link pugInterpolationDelimiter Delimiter
 hi def link pugInlineDelimiter        Delimiter
