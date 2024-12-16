@@ -94,7 +94,7 @@ hi def link pugScriptLoopKeywords     PreProc
 hi def link pugScriptStatement        PreProc
 hi def link pugHtmlArg                htmlArg
 hi def link pugAttributeString        String
-hi def link pugAttributesDelimiter    Identifier
+hi def link pugAttributesDelimiter    Special
 hi def link pugIdChar                 Special
 hi def link pugId                     Special
 hi def link pugClassChar              Special
