@@ -89,7 +89,7 @@ syn region  pugCssBlock        start="^\z(\s*\)style" nextgroup=@pugComponent,pu
 syn match  pugError "\$" contained
 
 hi def link pugPlainChar              Special
-hi def link pugTag                    PreProc
+hi def link pugTag                    Statement
 hi def link pugScriptConditional      Identifier
 hi def link pugScriptConditionalMatch PreProc
 hi def link pugScriptConditionalDelimiter PreProc
@@ -99,6 +99,7 @@ hi def link pugScriptLoopRegion       Identifier
 hi def link pugScriptStatement        Statement
 hi def link pugScriptStatementKeywords PreProc
 hi def link pugHtmlArg                htmlArg
+hi def link pugAttributes             Identifier
 hi def link pugAttributeString        String
 hi def link pugAttributesDelimiter    Special
 hi def link pugIdChar                 Special
@@ -116,6 +117,8 @@ hi def link pugCommentTodo            Todo
 hi def link pugComment                Comment
 hi def link pugCommentBlock           Comment
 hi def link pugHtmlConditionalComment pugComment
+hi def link pugJavascript             Identifier
+hi def link pugJavascriptOutputChar   Identifier
 hi def link pugJavascriptString       String
 hi def link javascriptInterpolation   Delimiter
 
