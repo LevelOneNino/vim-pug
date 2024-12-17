@@ -82,6 +82,8 @@ syn keyword  pugScriptLoopKeywords contained for each in
 syn region  pugJavascript start="^\z(\s*\)script\%(:\w\+\)\=" end="^\%(\z1\s\|\s*$\)\@!" contains=@htmlJavascript,pugJavascriptTag,pugCoffeescriptFilter keepend
 syn region javascriptInterpolation start=/${/ end=/}/ contained
 
+syn match pugJavascriptOperator containedin=pugJavascript " ? \| : \| || \| && "
+
 syn region  pugCoffeescriptFilter matchgroup=pugFilter start="^\z(\s*\):coffee-\?script\s*$" end="^\%(\z1\s\|\s*$\)\@!" contains=@htmlCoffeescript contained
 syn region  pugJavascriptTag contained start="^\z(\s*\)script\%(:\w\+\)\=" end="$" contains=pugBegin,pugTag
 syn region  pugCssBlock        start="^\z(\s*\)style" nextgroup=@pugComponent,pugError  end="^\%(\z1\s\|\s*$\)\@!" contains=@htmlCss keepend
@@ -118,6 +120,7 @@ hi def link pugComment                Comment
 hi def link pugCommentBlock           Comment
 hi def link pugHtmlConditionalComment pugComment
 hi def link pugJavascript             Identifier
+hi def link pugJavascriptOperator     PreProc
 hi def link pugJavascriptOutputChar   Identifier
 hi def link pugJavascriptString       String
 hi def link javascriptInterpolation   Delimiter
