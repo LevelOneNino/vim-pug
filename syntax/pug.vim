@@ -121,9 +121,12 @@ hi def link pugCommentBlock           Comment
 hi def link pugHtmlConditionalComment pugComment
 hi def link pugJavascript             Identifier
 hi def link pugJavascriptOperator     PreProc
+hi def link pugJavascriptChar         PreProc
 hi def link pugJavascriptOutputChar   Identifier
 hi def link pugJavascriptString       String
 hi def link javascriptInterpolation   Delimiter
+hi def link javascriptParenthesisBlock   Identifier
+hi def link javascriptParens          PreProc
 
 let b:current_syntax = "pug"
 
