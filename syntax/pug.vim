@@ -112,6 +112,7 @@ hi def link pugPipeChar               Special
 hi def link pugTagBlockChar           Special
 hi def link pugClass                  Type
 hi def link pugInterpolationDelimiter Delimiter
+hi def link pugInterpolation          Identifier
 hi def link pugInlineDelimiter        Delimiter
 hi def link pugFilter                 PreProc
 hi def link pugDocType                PreProc
@@ -122,7 +123,7 @@ hi def link pugHtmlConditionalComment pugComment
 hi def link pugJavascript             Identifier
 hi def link pugJavascriptOperator     PreProc
 hi def link pugJavascriptChar         PreProc
-hi def link pugJavascriptOutputChar   Identifier
+hi def link pugJavascriptOutputChar   PreProc
 hi def link pugJavascriptString       String
 hi def link javascriptInterpolation   Delimiter
 hi def link javascriptParenthesisBlock   Identifier
