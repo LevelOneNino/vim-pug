@@ -69,7 +69,7 @@ syn region  pugStylusFilter matchgroup=pugFilter start="^\z(\s*\):stylus\s*$" en
 syn region  pugPlainFilter matchgroup=pugFilter start="^\z(\s*\):\%(sass\|less\|cdata\)\s*$" end="^\%(\z1\s\|\s*$\)\@!"
 
 " syn match  pugScriptConditional "^\s*\<\%(if\|else if\|else\|elif\|unless\|while\|until\|case\|when\|default\)\>[?!]\@!"
-syn region  pugScriptConditional start="^\s*\<\%(if\|else if\|else\|elif\|unless\|while\|until\|case\|when\|default\)\>[?!]\@!" end="$" contains=pugScriptConditionalMatch,pugScriptConditionalBool, pugScriptConditionalDelimiter
+syn region  pugScriptConditional start="^\s*\<\%(if\|else if\|else\|elif\|unless\|while\|until\|case\|when\|default\)\>[?!]\@!" end="$" contains=pugScriptConditionalMatch,pugScriptConditionalBool, pugScriptConditionalDelimiter,javascriptInterpolation
 syn match  pugScriptConditionalMatch "^\s*\<\%(if\|else if\|else\|elif\|unless\|while\|until\|case\|when\|default\)\>[?!]\@!" contained
 syn match pugScriptConditionalBool contained "||\|&&\|===\|==\|<\|>\|=<\|>="
 syn match pugScriptConditionalDelimiter contained "(\|)"
